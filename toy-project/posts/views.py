@@ -34,7 +34,7 @@ class PostDetail(APIView):
         if 'password' not in request.data:
             return Response({"error":"비밀번호를 입력하세요"}, status=status.HTTP_400_BAD_REQUEST)
         
-        if not check_password(request.data['password'], post.password):
+        if request.data['password'] != post.password:
             return Response({"error":"비밀번호가 일치하지 않습니다. 수정 권한이 없습니다."}, status=status.HTTP_400_BAD_REQUEST )  
         
         # partial = True는 부분 업데이트 허용
@@ -50,7 +50,7 @@ class PostDetail(APIView):
             return Response({"error":"비밀번호를 입력하세요"}, status=status.HTTP_400_BAD_REQUEST)
 
         # 암호화된 비밀번호와 사용자가 입력한 비밀번호를 비교
-        if not check_password(request.data['password'], post.password):
+        if request.data['password'] != post.password:
             return Response({"error":"비밀번호가 일치하지 않습니다"}, status=status.HTTP_400_BAD_REQUEST )  
         
         post.delete()
