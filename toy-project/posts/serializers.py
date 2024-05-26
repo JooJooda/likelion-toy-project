@@ -15,7 +15,7 @@ class PostSerializer(serializers.ModelSerializer):
     #     return super().save(**kwargs)
     
     # 모델 인스턴스를 json으로 변환하는 메소드. 오버라이딩을 통해 password 필드가 respond 되지 않도록 한다.
-    def to_representation(self, instance):
-        data = super().to_representation(instance)
-        data.pop('password', None)
-        return data
+    # def to_representation(self, instance):
+    #     data = super().to_representation(instance)
+    #     data.pop('password', None)
+    #     return data
