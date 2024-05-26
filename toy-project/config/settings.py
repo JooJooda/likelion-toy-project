@@ -87,7 +87,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://127.0.0.1:5500",
-    "http://joey-joo-guestbook.o-r.kr"
+    "http://joey-joo-guestbook.o-r.kr/"
 ]
 
 ROOT_URLCONF = 'config.urls'
